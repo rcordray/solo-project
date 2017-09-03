@@ -1,0 +1,17 @@
+{
+    "name": "fantasybaseballtracker",
+    "scripts": {
+        "start": "node server/server.js"
+    },
+    "version": "1.0.0",
+    "main": "server.js",
+    "author": "robert cordray",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "angular": "^1.6.6",
+        "angular-route": "^1.6.6",
+        "express": "^4.15.4",
+        "mongoose": "^4.11.9"
+    }
+}
