@@ -16,9 +16,9 @@
 <body ng-app="webApp" ng-controller="webController as vm">
     <p>Here goes nothin</p>
 
-    <input ng-model="query[queryBy]" placeholder="Search">
+    <input ng-model="searchBox" placeholder="Search">
 
-    <select ng-model="queryBy">
+    <select ng-model="searchBoxBy">
             <option value="$"></option>
             <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
             <option value="Atlanta Braves">Atlanta Braves</option>
@@ -54,7 +54,7 @@
 
 
     <h3>players</h3>
-    <div ng-repeat="player in vm.players.list | filter:query">
+    <div ng-repeat="player in vm.players.list | filter:searchBox | filter:searchBoxBy">
         <p> Name: {{player.firstname}} {{player.lastname}}
             <br> position: {{player.position}}
             <br> team: {{player.team}}

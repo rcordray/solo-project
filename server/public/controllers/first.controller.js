@@ -4,10 +4,6 @@ webApp.controller('webController', ['webService', function(webService) {
     var self = this;
     self.players = webService.players;
 
-    // webService.query = {}
-    // webService.queryBy = '$'
-    // webService.players = [];
-
     // self.deletePlayer = function(playerId) {
     //     FirstService.deletePlayer
     // }
