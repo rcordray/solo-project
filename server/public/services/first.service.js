@@ -16,4 +16,5 @@ webApp.service('webService', ['$http', function($http) {
     };
     self.getPlayers();
 
+
 }])
