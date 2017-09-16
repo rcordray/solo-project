@@ -1,7 +1,8 @@
 <input ng-model="searchBox" placeholder="Search">
 
 <select ng-model="searchBoxBy">
-            <option value="$"></option>
+        <option value="" disabled>Team</option>
+            <!-- <option value="{{}}"></option> -->
             <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
             <option value="Atlanta Braves">Atlanta Braves</option>
             <option value="Baltimore Orioles">Baltimore Orioles</option>
@@ -32,6 +33,18 @@
             <option value="Texas Rangers">Texas Rangers</option>
             <option value="Toronto Blue Jays">Toronto Blue Jays</option>
             <option value="Washington Nationals">Washington Nationals</option>
+        </select>
+<select ng-model="searchBoxBy">
+        <option value="" disabled>Position</option>
+                    <option value="Catcher">Catcher</option>
+                    <option value="Pitcher">Pitcher</option>
+                    <option value="First Base">First Base</option>
+                    <option value="Second Base">Second Base</option>
+                    <option value="Third Base">Third Base</option>
+                    <option value="Shortstop">Shortstop</option>
+                    <option value="Left Field">Left Field</option>
+                    <option value="Center Field">Center Field</option>
+                    <option value="Right Field">Right Field</option>
         </select><br>
 
 
@@ -41,14 +54,16 @@
         <tr>
             <th>Player Name</th>
             <th>Team</th>
+            <th>Position</th>
             <th>Notes</th>
         </tr>
         <tr ng-repeat="player in vm.players.list | filter:searchBox | filter:searchBoxBy">
             <td>{{player.firstname}} {{player.lastname}}</td>
             <td>{{player.team}}</td>
-            <td>{{player.notes}}</td>
-            <td><button ng-click="">Edit Notes</button> </td>
-            <td><button ng-click="">Delete Notes</button> </td>
+            <td>{{player.position}}</td>
+            <td><span editable-text="player.notes" e-label="Notes">{{player.notes || 'empty' }}</span> </td>
+            <td><button ng-click="vm.editPlayerNotes(player)">Save Notes</button> </td>
+            <!-- <td><button ng-click="">Delete Notes</button> </td> -->
         </tr>
     </table>
 </div>

@@ -4,6 +4,8 @@
 <head>
     <title>Where's My Baseball?</title>
     <script src="scripts/vendors/angular.min.js"></script>
+    <script src="scripts/vendors/xeditable.min.js"></script>
+    <link rel="stylesheet" href="styles/xeditable.min.css">
     <script src="scripts/vendors/angular-route.min.js"></script>
     <script src="scripts/client.js"></script>
     <script src="controllers/first.controller.js"></script>
@@ -16,11 +18,12 @@
 </head>
 
 <body ng-app="webApp" ng-controller="webController as vm">
-    <p>Here goes nothin</p>
+    <p>Where's My Baseball?!</p>
+    <img src="images/baseball.jpg" alt="baseball!"><br>
     <ng-view></ng-view><br>
     <a href="#!">Home</a><br>
-    <a href="#!search">Search for players</a><br>
-    <a href="#!addnew">Add new players</a>
+    <a href="#!search">Search</a><br>
+    <a href="#!addnew">Add</a>
 
 </body>
 

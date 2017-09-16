@@ -1,5 +1,6 @@
 var router = require('express').Router();
 var pool = require('../pool/pool.js');
+// var apiResponse = require('../modules/apiresponse.js');
 
 router.get('/', function(req, res) {
     pool.connect(function(errorConnectingToDatabase, client, done) {
@@ -13,6 +14,7 @@ router.get('/', function(req, res) {
                     res.sendStatus(500);
                 } else {
                     res.send(result.rows);
+                    // res.send(apiResponse.response);
                 }
             });
         }
@@ -39,6 +41,27 @@ router.post('/', function(req, res) {
 
         }
     });
+});
+
+router.put('/', function(req, res) {
+    console.log('put hit', req.body);
+
+    pool.connect(function(err, db, done) {
+        if (err) {
+            console.log('remove error: ', err);
+            res.sendStatus(500);
+        } else {
+            db.query('UPDATE players SET notes=$1 WHERE id=$2', [req.body.notes, req.body.id], function(errorMakingQuery, result) {
+                done();
+                if (errorMakingQuery) {
+                    console.log('error with put', errorMakingQuery);
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(200);
+                }
+            })
+        }
+    })
 });
 
 

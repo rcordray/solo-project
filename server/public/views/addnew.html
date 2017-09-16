@@ -1,9 +1,7 @@
-{{ vm }}
-
-<br />
-<input type="text" ng-model="vm.players.player.firstname">First Name <br>
-<input type="text" ng-model="vm.players.player.lastname">Last Name <br>
+<input type="text" ng-model="vm.players.player.firstname" placeholder="First Name"> <br>
+<input type="text" ng-model="vm.players.player.lastname" placeholder="Last Name"><br>
 <select ng-model="vm.players.player.team">
+        <option value="" disabled>Team</option>
         <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
         <option value="Atlanta Braves">Atlanta Braves</option>
         <option value="Baltimore Orioles">Baltimore Orioles</option>
@@ -36,6 +34,7 @@
         <option value="Washington Nationals">Washington Nationals</option>
     </select><br>
 <select ng-model="vm.players.player.position">
+        <option value="" disabled>Position</option>
             <option value="Catcher">Catcher</option>
             <option value="Pitcher">Pitcher</option>
             <option value="First Base">First Base</option>
@@ -45,6 +44,6 @@
             <option value="Left Field">Left Field</option>
             <option value="Center Field">Center Field</option>
             <option value="Right Field">Right Field</option>
-</select>
-<input type="text" ng-model="vm.players.player.notes">Notes <br>
+</select><br>
+<input type="text" ng-model="vm.players.player.notes" placeholder="Notes"> <br>
 <button ng-click="vm.addNewPlayer()">Add new</button>
