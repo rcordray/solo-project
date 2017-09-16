@@ -8,16 +8,20 @@
     <link rel="stylesheet" href="styles/xeditable.min.css">
     <script src="scripts/vendors/angular-route.min.js"></script>
     <script src="scripts/client.js"></script>
-    <script src="controllers/first.controller.js"></script>
+    <!-- <script src="controllers/first.controller.js"></script> -->
     <script src="controllers/second.controller.js"></script>
-    <script src="services/first.service.js"></script>
+    <!-- <script src="services/first.service.js"></script> -->
     <script src="services/second.service.js"></script>
+    <script src="controllers/info.controller.js"></script>
+    <script src="controllers/login.controller.js"></script>
+    <script src="controllers/user.controller.js"></script>
+    <script src="services/user.service.js"></script>
     <!-- <link rel="stylesheet" href="vendors/angular-material.css">
     <script src="vendors/angular-material.js"></script>
     <script src="vendors/angular-route.min.js"></script> -->
 </head>
 
-<body ng-app="webApp" ng-controller="webController as vm">
+<body ng-app="webApp">
     <p>Where's My Baseball?!</p>
     <img src="images/baseball.jpg" alt="baseball!"><br>
     <ng-view></ng-view><br>
