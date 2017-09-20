@@ -1,39 +1,48 @@
 <input ng-model="searchBox" placeholder="Search">
 
+<!-- <div class="col-lg-6">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+    </div ng-model="searchBox">
+    /input-group -->
+<!-- </div> -->
 <select ng-model="searchBoxBy">
-        <option value="" disabled>Team</option>
-            <!-- <option value="{{}}"></option> -->
-            <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
-            <option value="Atlanta Braves">Atlanta Braves</option>
-            <option value="Baltimore Orioles">Baltimore Orioles</option>
-            <option value="Boston Red Sox">Boston Red Sox</option>
-            <option value="Chicago Cubs">Chicago Cubs</option>
-            <option value="Chicago White Sox">Chicago White Sox</option>
-            <option value="Cincinnati Reds">Cincinnati Reds</option>
-            <option value="Cleveland Indians">Cleveland Indians</option>
-            <option value="Colorado Rockies">Colorado Rockies</option>
-            <option value="Detroit Tigers">Detroit Tigers</option>
-            <option value="Houston Astros">Houston Astros</option>
-            <option value="Kansas City Royals">Kansas City Royals</option>
-            <option value="Los Angeles Angels of Anaheim">Los Angeles Angels of Anaheim</option>
-            <option value="Los Angeles Dodgers">Los Angeles Dodgers</option>
-            <option value="Miami Marlins">Miami Marlins</option>
-            <option value="Milwaukee Brewers">Milwaukee Brewers</option>
-            <option value="Minnesota Twins">Minnesota Twins</option>
-            <option value="New York Mets">New York Mets</option>
-            <option value="New York Yankees">New York Yankees</option>
-            <option value="Oakland Athletics">Oakland Athletics</option>
-            <option value="Philadelphia Phillies">Philadelphia Phillies</option>
-            <option value="Pittsburgh Pirates">Pittsburgh Pirates</option>
-            <option value="San Diego Padres">San Diego Padres</option>
-            <option value="San Francisco Giants">San Francisco Giants</option>
-            <option value="Seattle Mariners">Seattle Mariners</option>
-            <option value="St. Louis Cardinals">St. Louis Cardinals</option>
-            <option value="Tampa Bay Rays">Tampa Bay Rays</option>
-            <option value="Texas Rangers">Texas Rangers</option>
-            <option value="Toronto Blue Jays">Toronto Blue Jays</option>
-            <option value="Washington Nationals">Washington Nationals</option>
-        </select>
+<option value="" disabled>Team</option>
+<!-- <option value="{{}}"></option> -->
+<option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
+<option value="Atlanta Braves">Atlanta Braves</option>
+<option value="Baltimore Orioles">Baltimore Orioles</option>
+<option value="Boston Red Sox">Boston Red Sox</option>
+<option value="Chicago Cubs">Chicago Cubs</option>
+<option value="Chicago White Sox">Chicago White Sox</option>
+<option value="Cincinnati Reds">Cincinnati Reds</option>
+<option value="Cleveland Indians">Cleveland Indians</option>
+<option value="Colorado Rockies">Colorado Rockies</option>
+<option value="Detroit Tigers">Detroit Tigers</option>
+<option value="Houston Astros">Houston Astros</option>
+<option value="Kansas City Royals">Kansas City Royals</option>
+<option value="Los Angeles Angels of Anaheim">Los Angeles Angels of Anaheim</option>
+<option value="Los Angeles Dodgers">Los Angeles Dodgers</option>
+<option value="Miami Marlins">Miami Marlins</option>
+<option value="Milwaukee Brewers">Milwaukee Brewers</option>
+<option value="Minnesota Twins">Minnesota Twins</option>
+<option value="New York Mets">New York Mets</option>
+<option value="New York Yankees">New York Yankees</option>
+<option value="Oakland Athletics">Oakland Athletics</option>
+<option value="Philadelphia Phillies">Philadelphia Phillies</option>
+<option value="Pittsburgh Pirates">Pittsburgh Pirates</option>
+<option value="San Diego Padres">San Diego Padres</option>
+<option value="San Francisco Giants">San Francisco Giants</option>
+<option value="Seattle Mariners">Seattle Mariners</option>
+<option value="St. Louis Cardinals">St. Louis Cardinals</option>
+<option value="Tampa Bay Rays">Tampa Bay Rays</option>
+<option value="Texas Rangers">Texas Rangers</option>
+<option value="Toronto Blue Jays">Toronto Blue Jays</option>
+<option value="Washington Nationals">Washington Nationals</option>
+</select>
 <select ng-model="searchBoxBy">
         <option value="" disabled>Position</option>
                     <option value="Catcher">Catcher</option>
@@ -47,23 +56,27 @@
                     <option value="Right Field">Right Field</option>
         </select><br>
 
-
 <h3>players</h3>
 <div>
-    <table>
-        <tr>
-            <th>Player Name</th>
-            <th>Team</th>
-            <th>Position</th>
-            <th>Notes</th>
-        </tr>
-        <tr ng-repeat="player in vm.players.list | filter:searchBox | filter:searchBoxBy">
-            <td>{{player.firstname}} {{player.lastname}}</td>
-            <td>{{player.team}}</td>
-            <td>{{player.position}}</td>
-            <td><span editable-text="player.notes" e-label="Notes">{{player.notes || 'empty' }}</span> </td>
-            <td><button ng-click="vm.editPlayerNotes(player)">Save Notes</button> </td>
-            <!-- <td><button ng-click="">Delete Notes</button> </td> -->
-        </tr>
-    </table>
+    <tbody>
+        <table class="table table-hover">
+            <tr>
+                <th>Player Name</th>
+                <th>Team</th>
+                <th>Position</th>
+                <th>Notes</th>
+            </tr>
+            <tr ng-repeat="player in vm.players.list | filter:searchBox | filter:searchBoxBy">
+                <td>{{player.firstname}} {{player.lastname}}</td>
+                <td>{{player.team}}</td>
+                <td>{{player.position}}</td>
+                <td><span editable-text="player.notes" e-label="Notes">{{player.notes || 'empty' }}</span> </td>
+                <td><button ng-click="vm.editPlayerNotes(player)">Save Notes</button> </td>
+                <!-- <td><button ng-click="">Delete Notes</button> </td> -->
+            </tr>
+        </table>
+    </tbody>
 </div>
+
+
+<span id="totalRBI">RBI</span>

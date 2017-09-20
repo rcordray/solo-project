@@ -7,27 +7,37 @@
     <script src="scripts/vendors/xeditable.min.js"></script>
     <link rel="stylesheet" href="styles/xeditable.min.css">
     <script src="scripts/vendors/angular-route.min.js"></script>
+    <script src="scripts/vendors/jquery.min.js"></script>
+    <script src="scripts/vendors/bootstrap.min.js"></script>
+    <script src="scripts/vendors/angular-aria.min.js"></script>
+    <script src="scripts/vendors/angular-messages.min.js"></script>
+    <script src="scripts/vendors/angular-animate.min.js"></script>
+    <link rel="stylesheet" href="scripts/vendors/angular-material.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap-theme.min.css">
+    <script src="scripts/vendors/angular-material.js"></script>
     <script src="scripts/client.js"></script>
-    <!-- <script src="controllers/first.controller.js"></script> -->
     <script src="controllers/second.controller.js"></script>
-    <!-- <script src="services/first.service.js"></script> -->
     <script src="services/second.service.js"></script>
     <script src="controllers/info.controller.js"></script>
     <script src="controllers/login.controller.js"></script>
     <script src="controllers/user.controller.js"></script>
     <script src="services/user.service.js"></script>
-    <!-- <link rel="stylesheet" href="vendors/angular-material.css">
-    <script src="vendors/angular-material.js"></script>
-    <script src="vendors/angular-route.min.js"></script> -->
+    <script src="scripts/apiresponse.js"></script>
+    <script src="scripts/displayresponse.js"></script>
+    <script src="scripts/documentready.js"></script>
 </head>
 
 <body ng-app="webApp">
-    <p>Where's My Baseball?!</p>
-    <img src="images/baseball.jpg" alt="baseball!"><br>
+
+
+    <ul class="nav nav-pills nav-justified">
+        <li role="presentation"><a href="#!homepage">Home</a></li>
+        <li role="presentation"><a href="#!search">Search</a></li>
+        <li role="presentation"><a href="#!addnew">Add</a></li>
+    </ul>
+
     <ng-view></ng-view><br>
-    <a href="#!">Home</a><br>
-    <a href="#!search">Search</a><br>
-    <a href="#!addnew">Add</a>
 
 </body>
 

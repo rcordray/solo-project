@@ -1,6 +1,7 @@
 var router = require('express').Router();
 var pool = require('../pool/pool.js');
-// var apiResponse = require('../modules/apiresponse.js');
+var apiResponse = require('../modules/apiresponse.js');
+
 
 router.get('/', function(req, res) {
     pool.connect(function(errorConnectingToDatabase, client, done) {
@@ -14,7 +15,7 @@ router.get('/', function(req, res) {
                     res.sendStatus(500);
                 } else {
                     res.send(result.rows);
-                    // res.send(apiResponse.response);
+                    // process(response.response);
                 }
             });
         }

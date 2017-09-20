@@ -9,11 +9,13 @@ webApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/search', {
             templateUrl: './views/search.html',
             controller: 'secondController as vm'
+        }).when('/homepage', {
+            templateUrl: './views/homepage.html',
+            controller: 'secondController as vm'
         }).when('/addnew', {
             templateUrl: './views/addnew.html',
             controller: 'secondController as vm'
-        })
-        .when('/home', {
+        }).when('/home', {
             templateUrl: '/views/templates/home.html',
             controller: 'LoginController as lc',
         })
