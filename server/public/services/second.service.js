@@ -29,7 +29,9 @@ webApp.service('secondService', ['$http', '$location', function($http, $location
         }).then(function(response) {
             console.log('getPlayers response', response);
             $location.path('/search')
-        });
+        }).then(function() {
+            $location.reload('/search')
+        })
     };
 
     self.getPlayers();

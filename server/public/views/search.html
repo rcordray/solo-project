@@ -1,4 +1,4 @@
-<input ng-model="searchBox" placeholder="Search">
+<input class="form-control" ng-model="searchBox" placeholder="Search">
 
 <!-- <div class="col-lg-6">
     <div class="input-group">
@@ -9,8 +9,8 @@
     </div ng-model="searchBox">
     /input-group -->
 <!-- </div> -->
-<select ng-model="searchBoxBy">
-<option value="" disabled>Team</option>
+<select class="form-control" ng-model="searchBoxBy">
+<option value="" disabled>Favorite Team</option>
 <!-- <option value="{{}}"></option> -->
 <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
 <option value="Atlanta Braves">Atlanta Braves</option>
@@ -43,8 +43,8 @@
 <option value="Toronto Blue Jays">Toronto Blue Jays</option>
 <option value="Washington Nationals">Washington Nationals</option>
 </select>
-<select ng-model="searchBoxBy">
-        <option value="" disabled>Position</option>
+<select class="form-control" ng-model="searchBoxBy">
+        <option value="" disabled>Preferred Position</option>
                     <option value="Catcher">Catcher</option>
                     <option value="Pitcher">Pitcher</option>
                     <option value="First Base">First Base</option>
@@ -56,27 +56,33 @@
                     <option value="Right Field">Right Field</option>
         </select><br>
 
+<!-- <p>{{vm}} </p><br>
+<button ng-click="vm.response.data()">RANDOM PICTURES</button>
+<br> -->
+
 <h3>players</h3>
 <div>
     <tbody>
         <table class="table table-hover">
             <tr>
                 <th>Player Name</th>
-                <th>Team</th>
-                <th>Position</th>
+                <th>Favorite MLB Team</th>
+                <th>Preferred Position</th>
                 <th>Notes</th>
             </tr>
             <tr ng-repeat="player in vm.players.list | filter:searchBox | filter:searchBoxBy">
-                <td>{{player.firstname}} {{player.lastname}}</td>
+                <td><a ng-href="/#!/player/{{player.id}}">{{player.firstname}} {{player.lastname}}</a></td>
                 <td>{{player.team}}</td>
                 <td>{{player.position}}</td>
                 <td><span editable-text="player.notes" e-label="Notes">{{player.notes || 'empty' }}</span> </td>
                 <td><button ng-click="vm.editPlayerNotes(player)">Save Notes</button> </td>
-                <!-- <td><button ng-click="">Delete Notes</button> </td> -->
+                <!-- <td><button ng-click="">Delete</button> </td> -->
             </tr>
         </table>
     </tbody>
 </div>
 
 
-<span id="totalRBI">RBI</span>
+
+
+<!-- <span id="totalRBI">RBI</span> -->
