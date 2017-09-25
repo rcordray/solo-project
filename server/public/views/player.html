@@ -1,3 +1,7 @@
-<p>
-
-    {{pc.players.list}}</p>
+<center>
+    <h1 ng-repeat="player in pc.players.list | filter: pc.currentPlayerId">{{player.firstname}} {{player.lastname}} </h1>
+    <h3><u>Favorite Team</u></h3>
+    <p ng-repeat="player in pc.players.list | filter: pc.currentPlayerId">{{player.team}} </p>
+    <h3><u>Preferred Position</u></h3>
+    <p ng-repeat="player in pc.players.list | filter: pc.currentPlayerId">{{player.position}} </p>
+</center>

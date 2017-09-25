@@ -49,6 +49,22 @@ webApp.service('secondService', ['$http', '$location', function($http, $location
 
         })
 
-    }
+    };
 
+
+    self.deletePlayer = function(id) {
+        console.log('delete hit!', id);
+
+        $http({
+            method: 'DELETE',
+            url: '/players/' + id,
+            success: function(response) {
+                console.log('are we here?');
+
+                self.getPlayers();
+            }
+
+        })
+
+    }
 }]);

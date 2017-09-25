@@ -76,7 +76,7 @@
                 <td>{{player.position}}</td>
                 <td><span editable-text="player.notes" e-label="Notes">{{player.notes || 'empty' }}</span> </td>
                 <td><button ng-click="vm.editPlayerNotes(player)">Save Notes</button> </td>
-                <!-- <td><button ng-click="">Delete</button> </td> -->
+                <td><button ng-click="vm.deletePlayer(player.id)">Delete</button> </td>
             </tr>
         </table>
     </tbody>

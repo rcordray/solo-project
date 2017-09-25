@@ -66,4 +66,24 @@ router.put('/', function(req, res) {
 });
 
 
+router.delete('/:id', function(req, res) {
+    console.log('delete hit', req.params.id);
+    pool.connect(function(err, db, done) {
+        if (err) {
+            console.log('delete error: ', err);
+            res.sendStatus(500);
+        } else {
+            db.query('DELETE FROM players WHERE id=$1', [req.params.id], function(errorMakingQuery, result) {
+                done();
+                if (errorMakingQuery) {
+                    console.log('error with put', errorMakingQuery);
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(200);
+                }
+            })
+        }
+    })
+});
+
 module.exports = router;

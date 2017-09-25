@@ -17,7 +17,7 @@ webApp.config(['$routeProvider', function($routeProvider) {
             controller: 'secondController as vm'
         }).when('/player/:id', {
             templateUrl: '/views/player.html',
-            controller: 'PlayerController as pc'
+            controller: 'secondController as pc'
         }).when('/home', {
             templateUrl: '/views/templates/home.html',
             controller: 'LoginController as lc',
@@ -42,7 +42,7 @@ webApp.config(['$routeProvider', function($routeProvider) {
             }
         })
         .otherwise({
-            redirectTo: 'home'
+            redirectTo: '/homepage'
         })
 
 
