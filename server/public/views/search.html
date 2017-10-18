@@ -69,6 +69,8 @@
                 <th>Favorite MLB Team</th>
                 <th>Preferred Position</th>
                 <th>Notes</th>
+                <th>Save</th>
+                <th>Delete</th>
             </tr>
             <tr ng-repeat="player in vm.players.list | filter:searchBox | filter:searchBoxBy">
                 <td><a ng-href="/#!/player/{{player.id}}">{{player.firstname}} {{player.lastname}}</a></td>

@@ -21,20 +21,30 @@ webApp.service('secondService', ['$http', '$location', function($http, $location
 
     self.addNewPlayer = function() {
         console.log("player in the post", self.players.player);
-
-        $http({
-            method: 'POST',
-            url: '/players',
-            data: self.players.player
-        }).then(function(response) {
-            console.log('getPlayers response', response);
-            $location.path('/search')
+        swal({
+            title: 'Add this player?',
+            text: "This player will be added!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, add them!'
         }).then(function() {
-            $location.reload('/search')
+            $http({
+                method: 'POST',
+                url: '/players',
+                data: self.players.player
+            }).then(function(response) {
+                console.log('getPlayers response', response);
+                $location.path('/search')
+            }).then(function() {
+                $location.reload('/search')
+            })
+
         })
+        self.getPlayers();
     };
 
-    self.getPlayers();
 
     self.editPlayerNotes = function(player) {
         console.log('put hit!', player);
@@ -45,9 +55,9 @@ webApp.service('secondService', ['$http', '$location', function($http, $location
             data: player
         }).then(function(response) {
             console.log('notes edited', response.data);
-            self.getPlayers();
 
         })
+        self.getPlayers();
 
     };
 
@@ -55,16 +65,28 @@ webApp.service('secondService', ['$http', '$location', function($http, $location
     self.deletePlayer = function(id) {
         console.log('delete hit!', id);
 
-        $http({
-            method: 'DELETE',
-            url: '/players/' + id,
-            success: function(response) {
-                console.log('are we here?');
-
-                self.getPlayers();
-            }
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then(function() {
+            $http({
+                method: 'DELETE',
+                url: '/players/' + id,
+                success: function(response) {
+                    swal(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                    self.getPlayers();
+                }
+            })
 
         })
-
     }
 }]);

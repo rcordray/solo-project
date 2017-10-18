@@ -4,4 +4,6 @@
     <p ng-repeat="player in pc.players.list | filter: pc.currentPlayerId">{{player.team}} </p>
     <h3><u>Preferred Position</u></h3>
     <p ng-repeat="player in pc.players.list | filter: pc.currentPlayerId">{{player.position}} </p>
+    <h3><u>Notes</u></h3>
+    <p ng-repeat="player in pc.players.list | filter: pc.currentPlayerId">{{player.notes}} </p>
 </center>
