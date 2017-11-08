@@ -25,25 +25,22 @@
     <script src="controllers/login.controller.js"></script>
     <script src="controllers/user.controller.js"></script>
     <script src="services/user.service.js"></script>
-    <!-- <script src="services/player.service.js"></script> -->
-    <script src="scripts/apiresponse.js"></script>
-    <script src="scripts/displayresponse.js"></script>
-    <script src="scripts/documentready.js"></script>
     <script src="scripts/vendors/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="styles/sweetalert2.min.css">
 </head>
 
-<body ng-app="webApp">
+<body ng-app="webApp" class="animsition">
 
 
     <ul class="nav nav-pills nav-justified">
-        <li role="presentation"><a href="#!homepage">Home</a></li>
-        <li role="presentation"><a href="#!search">Roster</a></li>
-        <li role="presentation"><a href="#!addnew">Add</a></li>
+        <li role="presentation"><a class="animsition-link" href="#!homepage">Home</a></li>
+        <li role="presentation"><a class="animsition-link" href="#!search">Roster</a></li>
+        <li role="presentation"><a class="animsition-link" href="#!addnew">Add</a></li>
     </ul>
+    <div>
 
-    <ng-view></ng-view><br>
-
+        <ng-view></ng-view><br>
+    </div>
 </body>
 
 </html>

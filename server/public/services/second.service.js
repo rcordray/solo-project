@@ -41,8 +41,9 @@ webApp.service('secondService', ['$http', '$location', function($http, $location
                 $location.reload('/search')
             })
 
+        }).then(function() {
+            self.getPlayers();
         })
-        self.getPlayers();
     };
 
 
@@ -83,10 +84,21 @@ webApp.service('secondService', ['$http', '$location', function($http, $location
                         'Your file has been deleted.',
                         'success'
                     )
-                    self.getPlayers();
+                },
+                function(cancel) {
+                    // dismiss can be 'cancel', 'overlay',
+                    // 'close', and 'timer'
+                    if (cancel === 'cancel') {
+                        swal(
+                            'Cancelled',
+                            'Your imaginary file is safe :)',
+                            'error'
+                        )
+                    }
                 }
             })
-
+        }).then(function() {
+            self.getPlayers();
         })
     }
 }]);

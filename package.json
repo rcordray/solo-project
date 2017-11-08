@@ -1,43 +1,33 @@
 {
-  "name": "fantasybaseballtracker",
-  "scripts": {
-    "start": "node server/server.js"
-  },
-  "version": "1.0.0",
-  "main": "server.js",
-  "author": "robert cordray",
-  "license": "ISC",
-  "dependencies": {
-    "angular": "^1.6.6",
-    "angular-animate": "^1.6.6",
-    "angular-aria": "^1.6.6",
-    "angular-material": "^1.1.5",
-    "angular-messages": "^1.6.6",
-    "angular-route": "^1.6.6",
-    "angular-xeditable": "^0.8.0",
-    "bcrypt": "^1.0.3",
-    "body-parser": "^1.17.2",
-    "bootstrap": "^3.3.7",
-    "express": "^4.15.4",
-    "express-session": "^1.15.5",
-    "hammerjs": "^2.0.8",
-    "jquery": "^3.2.1",
-    "mongoose": "^4.11.9",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "pg": "^7.3.0",
-    "request": "^2.82.0",
-    "sweetalert": "^2.0.3",
-    "sweetalert2": "^6.10.1"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rcordray/solo-project.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rcordray/solo-project/issues"
-  },
-  "homepage": "https://github.com/rcordray/solo-project#readme",
-  "description": ""
+    "name": "fantasybaseballtracker",
+    "scripts": {
+        "start": "node server/server.js"
+    },
+    "version": "1.0.0",
+    "main": "server.js",
+    "author": "robert cordray",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "bootstrap": "^3.3.7",
+        "express": "^4.15.4",
+        "express-session": "^1.15.5",
+        "hammerjs": "^2.0.8",
+        "jquery": "^3.2.1",
+        "passport": "^0.4.0",
+        "passport-local": "^1.0.0",
+        "pg": "^7.3.0",
+        "request": "^2.82.0",
+        "sweetalert2": "^6.10.1"
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rcordray/solo-project.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rcordray/solo-project/issues"
+    },
+    "homepage": "https://github.com/rcordray/solo-project#readme",
+    "description": ""
 }
