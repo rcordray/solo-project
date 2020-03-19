@@ -4,7 +4,7 @@ var port = 5000;
 var bodyParser = require('body-parser');
 var passport = require('./strategies/sql.localstrategy');
 var sessionConfig = require('./modules/session.config');
-
+var bcrypt = require('bcryptjs');
 var players = require('./routes/players.js');
 // var addnew = require('./routes/addnew.js');
 
